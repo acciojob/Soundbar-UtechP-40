@@ -1,1 +1,25 @@
 /*  your css code here. If applicable */
+/*  your css code here. If applicable */
+ #buttons{
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+ }
+ body{
+    
+    background-color: #A164DF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ button{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.525);
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+ }
