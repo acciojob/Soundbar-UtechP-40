@@ -1,16 +1,28 @@
-//your JS code here. If required.
-//your JS code here. If required.
- let btn = document.querySelectorAll(".btn")
- 
- let stop = document.querySelector(".stop")
- for(let t of btn){
-    t.addEventListener("click",(e)=>{
-        let my_audio = new Audio(`./sounds/${t.innerText}.mp3`)
-        // let my_audio = "./sounds"
-        my_audio.play();
- stop.addEventListener("click",(e)=>{
-    my_audio.pause();
- })
+let btns = document.querySelectorAll(".btn");
+let currentAudio = null;
+btns.forEach(t => {
+    // console.log(t.innerHTML);
+    let audio = document.createElement("audio");
+    audio.src = `sounds/${t.innerHTML}.mp3`;
+    // console.log(audio);
+    
+    t.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
+        currentAudio = audio
+        currentAudio.play();
     })
- }
- 
+    
+});
+
+let stop = document.querySelector(".stop");
+
+stop.addEventListener("click", () => {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+})
