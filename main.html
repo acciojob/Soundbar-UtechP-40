@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Buttons</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Soundboard</title>
-</head> 
+</head>
 <body>
-    <div id="buttons">
-        <button class="btn">applause</button>
-        <button class="btn">boo</button>
-        <button class="btn">gasp</button>
-        <button class="btn">tada</button>
-        <button class="btn">victory</button>
-        <button class="btn">wrong</button>
-        <button class="stop">stop</button>
+    <div class="container">
+        <h1>Audio Playback</h1>
+        <button class="btn" id="applause">Applause</button>
+        <button class="btn" id="boo">Boo</button>
+        <button class="btn" id="laugh">Laugh</button>
+        <button class="btn" id="sad_trombone">Sad Trombone</button>
+        <button class="btn" id="cheer">Cheer</button>
+        <button class="btn" id="cymbals">Cymbals</button>
+        <audio id="audio-player" controls></audio>
     </div>
-    <audio id="audio-player" src=""></audio>
-    
-    <script type="text/javascript" src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,28 +1,16 @@
-// script.js
-let btn = document.querySelectorAll(".btn");
-let stop = document.querySelector(".stop");
-let my_audio = null;
+const buttons = document.querySelectorAll('.btn');
+const audioPlayer = document.getElementById('audio-player');
 
-for (let t of btn) {
-    t.addEventListener("click", (e) => {
-        // Pause any currently playing audio
-        if (my_audio) {
-            my_audio.pause(); 
-        }
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const audioFile = `./sounds/${button.id}.mp3`;
+        const audio = new Audio(audioFile);
         
-        // Create a new audio instance for the clicked button
-        my_audio = new Audio(`./sounds/${t.innerText.toLowerCase()}.mp3`);
-
-        // Play the audio and handle any errors
-        my_audio.play().catch(error => {
+        audio.play().then(() => {
+            console.log(`${button.id} is playing`);
+        }).catch(error => {
             console.error("Error playing audio:", error);
             alert("Failed to play audio. Please ensure the file exists.");
         });
     });
-}
-
-stop.addEventListener("click", (e) => {
-    if (my_audio) {
-        my_audio.pause();
-    }
 });
